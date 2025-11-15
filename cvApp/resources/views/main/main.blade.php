@@ -23,8 +23,8 @@
     </div>
 </section>
 <section class="cuerpo">
-    <div class="img"><img src="{{ asset('assets/img/cv3.png') }}" alt="No se encontro la imagen"></div>
-    <div class="cont">
+    <div class="img-cuerpo"><img src="{{ asset('assets/img/cv3.png') }}" alt="No se encontro la imagen"></div>
+    <div class="cont-cuerpo">
         <div class="cuerpo-tittle">
             <h1>Crea el CV ideal</h1>
         </div>

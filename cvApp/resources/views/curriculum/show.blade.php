@@ -1,10 +1,8 @@
 @extends('layout')
 @section('content')
 <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-<main class="px-3" style="height: auto; display: flex;
-    flex-direction: column; width: 100%;
-    height: auto;">
-    <div class="tittle-card-s" style="text-align: center; margin: 25px 0px;">
+<main class="custom-cards">
+    <div class="tittle-card-s cards-show">
         <h1>{{ $curriculum->nombre }}, {{ $curriculum->apellidos }}</h1>
     </div>
     <div class="contenedor" style="display: flex;">
@@ -36,16 +34,14 @@
             <br>
             Skills: {{ $curriculum->habilidades }}
             <br>
-            {{ $curriculum->image }}
-            <br>
-            PDF: {{ $curriculum->pdf }}
+            <a href="{{ asset('storage/' . $curriculum->pdf) }}" target="_blank" rel="noopener noreferrer">
+                Ver PDF
+            </a>
         </p>
     </div>
 </main>
 
-<table style="width: 100%;
-display: flex; justify-content:center; align-items: center;
-height:100px;">
+<table style="width: 100%; display: flex; justify-content:center; align-items: center; height:100px;">
     <tbody>
         <tr>
             <td>

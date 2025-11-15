@@ -15,15 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', 100);
             $table->string('apellidos', 100);
-            $table->string('teléfono', 10) -> unique();
+            $table->string('teléfono', 10);
             $table->string('correo', 100);
             $table->date('fecha_nacimiento', 100);
             $table->decimal('nota_media', 6, 2);
             $table->text('experiencia');
             $table->text('formación');
             $table->text('habilidades');
-            $table->string('image', 100) -> unique()->nullable();
-            $table->string('pdf', 100) -> unique()->nullable();
+            $table->string('image', 100) ->nullable();
+            $table->string('pdf', 100) ->nullable();
             $table->timestamps();
         });
     }

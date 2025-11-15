@@ -4,7 +4,7 @@
 <div class="container px-4 py-5" id="custom-cards">
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
         @foreach($curriculums as $curriculum)
-        <div class="col">
+        <div class="col tarjeta-cv">
             <a href="{{ route('curriculums.show', $curriculum->id) }}">
                 <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
                     style="background-image: {{ 'url(assets/img/portada.jpg)' }};

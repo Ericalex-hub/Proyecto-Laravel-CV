@@ -21,7 +21,7 @@ class CurriculumController extends Controller {
     /**
      * Show the form for creating a new resource.
      */
-    public function create():View {
+    function create():View {
         return view('curriculum.create');
     }
 
@@ -29,19 +29,23 @@ class CurriculumController extends Controller {
      * Store a newly created resource in storage.
      */
     function store(Request $request): RedirectResponse {
-        $request->validate([
-            'image' => 'required|image|mimes:png,jpg,jpeg,gif,webp|max:2048',
-        ]);
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('cv', 'public');
+            $recogImg = $request->file('image');
+            $nmbOrigin = $recogImg->getClientOriginalName();
+            $path = $recogImg->storeAs('cv', $nmbOrigin, 'public');
         } else {
             $path = null;
         }
+
         if ($request->hasFile('pdf')) {
-            $path_2 = $request->file('pdf')->store('pdf', 'public');
+            $recogPDF = $request->file('pdf');
+            $exte = $recogPDF->getClientOriginalName();
+            $nmbPrede = 'Tu PDF | ' . $exte;
+            $path_2 = $recogPDF->storeAs('pdf', $nmbPrede, 'public');
         } else {
             $path_2 = null;
         }
+
         $curriculum = new Curriculum();
         $curriculum->nombre = $request->nombre;
         $curriculum->apellidos = $request->apellidos;
