@@ -3,6 +3,7 @@ body {
     background: #111;
     color: #fff;
 }
+
 /*
 PLABRAS QUE NO SE PUEDEN USAR COMO CLASES
  - container
@@ -16,121 +17,346 @@ PLABRAS QUE NO SE PUEDEN USAR COMO CLASES
  - card-cover
 */
 
-
-.hero {
+.cabecera {
     width: 100%;
-    height: 300px;
+    height: auto;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.cabecera .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.logo img {
+    height: 100px;
+    width: 100px;
+}
+
+.cabecera .navegadores {
+    display: flex;
     gap: 25px;
 }
 
-.hero .hero-tittle {
-    width: auto;
-    height: auto;
+.navegadores a {
+    font-size: 2rem;
 }
 
-.hero .hero-text {
-    width: 25%;
-    height: 100%;
+/*----------AQUI TERMINA LA CABECERA----------*/
+.hero {
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    animation: animate 15s infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-image: url(../img/ofi1.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    25% {
+        background-image: url(../img/ofi2.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    50% {
+        background-image: url(../img/ofi3.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    75% {
+        background-image: url(../img/ofi4.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    100% {
+        background-image: url(../img/ofi1.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.hero .hero-tittle {
+    width: 100%;
+    text-align: center;
 }
 
 .hero-tittle h2 {
-    font-size: 10rem;
+    font-size: 6rem;
+}
+
+.hero .hero-text {
+    width: 100%;
     text-align: center;
-    text-decoration: underline;
 }
 
 .hero-text p {
-    text-align: justify;
-}
-
-
-.cuerpo {
-    width: 100%;
-    height: 500px;
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-
-.cuerpo .img-cuerpo {
-    width: 50%;
-    height: 50%;
-    margin: 25px 0px;    
-}
-
-.cuerpo .cont-cuerpo {
-    width: 100%;
-    height: 100%;
-}
-
-.img-cuerpo img {
-    width: 100%;
-    height: 100%;
-}
-
-.cont-cuerpo .cuerpo-tittle {
-    font-size: 5rem;
-    text-align: center;
-}
-
-.cont-cuerpo .cuerpo-text {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.cuerpo-text ul {
-    margin-top: 50px;
+    font-size: 2rem;
 }
 
 /*----------AQUI TERMINA EL HERO----------*/
-div.tarjeta-cv {
-    border: 10px solid white !important;
-}
-/*----------AQUI TERMINA EL MOSTRAR CURRICULUMS----------*/
-.crear-curriculum .main-content .part-total {
-    width: 100%;
-    height: auto;
-    margin-bottom: 50px;
-    display: flex;
-    
+.nolose a{
+    text-decoration: none;
 }
 
-.crear-curriculum .main-content .part-total .part-1, .part-2 {
+.tarjeta-cv {
+    margin: 0px 50px;
+    width: 300px;
+    height: 400px;
+    background-image: url(../img/portada.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition:.3s;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, .25);
+}
+
+.tarjeta-cv .space {
+    height: 57%;
+}
+
+div.info-cv {
+    height: 43%;
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    transition:.5s;
+}
+
+.info-cv h3 {
+    font-size: 1.5rem;
+}
+
+div.tarjeta-cv:hover {
+    transform: scale(1.05);
+}
+
+div.info-cv:hover {
+    text-align: justify;
+    transform: translateX(-20px);
+}
+
+div.info-cv h3 {
+    color: #111;
+    transition:.3s;
+}
+
+
+/*----------AQUI TERMINA EL MOSTRAR CURRICULUMS----------*/
+.crear-curriculum {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/fondoCurri.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.crear-curriculum h1 {
+    margin-bottom: 50px;
+    font-size: 3.5rem;
+}
+
+.parametro-curriculum {
+    width: 85%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(0, 0, 0, .8);
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+    color: #111;
+}
+
+.part-total {
+    width: 95%;
+    height: auto;
+    padding: 50px 50px 0px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.part-1,
+.part-2 {
+    border: 1px solid;
+    border-radius: 15px;
+    width: 45%;
+    font-size: 1.5rem;
+    margin: 25px;
+}
+
+.espacio {
+    margin: 25px;
+}
+
+.espacio input[type='text'],
+input[type='date'],
+input[type='tel'],
+input[type='number'],
+input[type='email'],
+input[type='file'] {
+    border: none;
+    border-bottom: 1px solid #111;
+    background: transparent;
+    outline: none;
+}
+
+.espacio input[type='text']:hover,
+input[type='date']:hover,
+input[type='tel']:hover,
+input[type='number']:hover,
+input[type='email']:hover {
+    cursor: pointer;
+    border-bottom: 1px solid white;
+    outline: none;
+}
+
+.espacio input[type='text']::placeholder,
+input[type='date']::placeholder,
+input[type='tel']::placeholder,
+input[type='number']::placeholder,
+input[type='email']::placeholder {
+    transform: translateX(5px);
+}
+
+.parametro-curriculum .espacio-btn {
+    width: 95%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacio-btn .btn {
+    width: 200px;
+    height: 50px;
+    font-size: 1.5rem;
+    box-shadow: 0px 0px 5px #111;
+}
+
+.espacio-btn .btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px #fff;
+    transition: all.3s ease;
+}
+
+/*----------AQUI TERMINA EL CREAR CURRICULUM----------*/
+.master-contenedor {
     width: 100%;
     height: auto;
+    background-image: url(../img/fondoShow.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contenido-curriculum {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    justify-content: center;
 }
 
-.crear-curriculum .main-content .part-total .part-1, .part-2 .espacio {
-    margin: 15px 0px;
-    width: 50%;
-    height: auto;
-}
-
-main .custom-cards {
-    height: auto;
-    display: flex;
-    flex-direction: column;
+.titulo-curriculum {
     width: 100%;
-    height: auto;
-    border:1px solid;
+    text-align: center;
+    display: flex;
+    margin: 50px 0px;
+    align-items: center;
+    justify-content: center;
+    color: #111;
 }
 
-.cards-show {
-    text-align: center;
-    margin: 25px 0px;
-    border: 1px solid;
+.titulo-curriculum h1 {
+    font-size: 3rem;
 }
+
+.relleno {
+    border: 1px solid rgba(0, 0, 0, .25);
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 700px;
+    gap: 50px;
+    backdrop-filter: blur(25px);
+}
+
+.relleno .contenedor-img {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.relleno img {
+    height: 100%;
+    border-radius: 15px;
+}
+
+.relleno .lead {
+    height: auto;
+    font-size: 2rem;
+}
+
+.master-contenedor table {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-top: 25px;
+}
+
+.master-contenedor table tbody tr td a {
+    font-size: 2rem;
+    margin: 0px 25px;
+    border: none;
+    border-radius: 5px;
+}
+
+.master-contenedor table tbody tr td a:nth-child(2) {
+    background: red;
+}
+
+/*----------AQUI TERMINA EL SHOW----------*/

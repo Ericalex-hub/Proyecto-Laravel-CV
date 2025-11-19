@@ -81,7 +81,23 @@ class CurriculumController extends Controller {
      */
     public function update(Request $request, Curriculum $curriculum) {
         $result = false;
-        $curriculum->fill($request->all());
+        $curriculum->fill($request->except(['image', 'pdf']));
+
+        if ($request->hasFile('image')) {
+            $recogImg = $request->file('image');
+            $nmbOrigin = $recogImg->getClientOriginalName();
+            $path = $recogImg->storeAs('cv', $nmbOrigin, 'public');
+            $curriculum->image = $path;
+        }
+
+        if ($request->hasFile('pdf')) {
+            $recogPDF = $request->file('pdf');
+            $exte = $recogPDF->getClientOriginalName();
+            $nmbPrede = 'Tu PDF | ' . $exte;
+            $path_2 = $recogPDF->storeAs('pdf', $nmbPrede, 'public');
+            $curriculum->pdf = $path_2;
+        }
+
         try {
             $result = $curriculum->save();
             $txtmessage = 'The curriculum has been edited.';

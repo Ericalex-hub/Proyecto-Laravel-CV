@@ -4,12 +4,10 @@
 <form class="crear-curriculum"
     action="{{ route('curriculums.store') }}"
     method="POST"
-    enctype="multipart/form-data"
-    style="display:flex; justify-content:center;
-    align-items:center; height:940px; width:100%">
+    enctype="multipart/form-data">
     @csrf
-    <div class="main-content"
-            style="width:75%; border:1px solid;">
+    <h1>Create a new cv</h1>
+    <div class="parametro-curriculum">
         <div class="part-total">
             <div class="part-1">
                 <div class="espacio">
@@ -60,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <div class="espacio" style="text-align:center;">
+        <div class="espacio-btn" style="text-align:center;">
             <input class="btn btn-primary" type="submit" value="Add new cv">
         </div>
     </div>

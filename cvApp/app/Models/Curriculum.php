@@ -16,15 +16,4 @@ class Curriculum extends Model {
         }
         return $path;
     }
-    
-    //Esto es para que me devuelva el pdf, ya exista o no
-    function getPdf() {
-        return url('storage/pdf') . '/' . $this->id . '.pdf';
-    }
-
-    //Esto comprueba si existe o no el pdf, si si existe se lo da a getPdf y si no, le da una fake pdf a getPdf
-    function isPdf() {
-        return file_exists(storage_path('app/public/pdf') . '/' . $this->id . '.pdf');
-    }
-
 }
